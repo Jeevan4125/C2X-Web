@@ -1,0 +1,169 @@
+@use "../../styles/variables" as v;
+
+.features {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: v.$space-3xl;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  line-height: 1.2;
+  margin-bottom: v.$space-md;
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: v.$space-xl;
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: v.$space-lg;
+  }
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    .arrow {
+      transform: translateX(6px);
+    }
+
+    .viewDetails {
+      color: v.$color-accent-hover;
+    }
+
+    .viewDetails::after {
+      width: 100%;
+    }
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: v.$space-md;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: v.$radius-sm;
+  background: rgba(0, 122, 204, 0.1);
+  color: v.$color-accent-hover;
+}
+
+.category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: v.$color-text-secondary;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid v.$color-border;
+  border-radius: 999px;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: v.$space-md;
+}
+
+.cardFooter {
+  padding-top: v.$space-md;
+  border-top: 1px solid v.$color-border;
+}
+
+.viewDetails {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  transition: color v.$transition-fast;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: v.$color-accent-hover;
+    transition: width 0.2s ease;
+  }
+}
+
+.arrow {
+  transition: transform v.$transition-fast;
+}

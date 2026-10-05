@@ -1,0 +1,112 @@
+@use "../styles/variables" as v;
+
+.docsLayout {
+  background: v.$color-background;
+  min-height: 100vh;
+}
+
+.docsContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: v.$space-xl v.$space-md v.$space-4xl;
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 280px 1fr 260px;
+  gap: v.$space-3xl;
+  align-items: start;
+
+  @media (max-width: v.$bp-laptop) {
+    grid-template-columns: 280px 1fr;
+    gap: v.$space-xl;
+  }
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: v.$space-xl;
+  }
+}
+
+// When no TOC is present, use only 2 columns
+.layoutGridNoToc {
+  grid-template-columns: 280px 1fr;
+
+  @media (max-width: v.$bp-laptop) {
+    grid-template-columns: 280px 1fr;
+  }
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: v.$space-sm;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+  }
+
+  @media (max-width: v.$bp-tablet) {
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding-right: 0;
+  }
+}
+
+.tocSidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-left: v.$space-sm;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+  }
+
+  @media (max-width: v.$bp-laptop) {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: calc(v.$z-mobile-menu - 1);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  @media (min-width: calc(v.$bp-tablet + 1px)) {
+    display: none;
+  }
+}
+
+.mainContent {
+  min-width: 0;
+}

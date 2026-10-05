@@ -1,0 +1,113 @@
+@use "../../styles/variables" as v;
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: v.$space-xl 0;
+  position: relative;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-lg 0;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: v.$space-xl;
+  padding: v.$space-lg 0;
+  position: relative;
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 40px 1fr;
+    gap: v.$space-md;
+    padding: v.$space-md 0;
+  }
+
+  &:last-child .line {
+    display: none;
+  }
+}
+
+.marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: v.$color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow:
+    0 0 0 4px v.$color-background,
+    0 0 0 6px v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  background: v.$color-border;
+  margin: 4px 0;
+
+  @media (max-width: v.$bp-tablet) {
+    margin: 2px 0;
+  }
+}
+
+.content {
+  padding-top: 4px;
+
+  @media (max-width: v.$bp-tablet) {
+    padding-top: 2px;
+  }
+}
+
+.year {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: v.$color-accent-hover;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(0, 122, 204, 0.1);
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: v.$space-sm;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-xs;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.description {
+  color: v.$color-text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 0.9rem;
+  }
+}

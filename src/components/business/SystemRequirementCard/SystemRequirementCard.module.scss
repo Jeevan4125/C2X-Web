@@ -1,0 +1,70 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-lg;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: v.$space-lg;
+  padding-bottom: v.$space-md;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.icon {
+  color: v.$color-accent;
+}
+
+.platformName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin: 0;
+}
+
+.specList {
+  display: flex;
+  flex-direction: column;
+}
+
+.specHeaderRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 0.5rem;
+}
+
+.colLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: v.$color-text-secondary;
+}
+
+.specRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.55rem 0;
+  border-top: 1px solid v.$color-border;
+  align-items: baseline;
+}
+
+.specLabel {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: v.$color-text-primary;
+}
+
+.specValue {
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+}
+
+.recommended {
+  color: v.$color-text-primary;
+}

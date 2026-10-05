@@ -1,0 +1,68 @@
+@use "../../styles/variables" as v;
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+  padding: 0.5rem 0.75rem;
+  background: v.$color-panel;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-fast;
+
+  &.focused {
+    border-color: v.$color-accent;
+    background: v.$color-surface;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
+  }
+}
+
+.icon {
+  color: v.$color-text-secondary;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: v.$color-text-primary;
+  font-size: 0.9rem;
+  min-width: 0;
+
+  &::placeholder {
+    color: v.$color-text-secondary;
+  }
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  background: transparent;
+  border: none;
+  color: v.$color-text-secondary;
+  border-radius: v.$radius-sm;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.kbd {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background: v.$color-border;
+  color: v.$color-text-secondary;
+  font-family: inherit;
+  display: none;
+
+  @media (min-width: v.$bp-tablet) {
+    display: inline-block;
+  }
+}

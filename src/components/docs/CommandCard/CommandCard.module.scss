@@ -1,0 +1,76 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  margin: v.$space-lg 0 v.$space-2xl;
+  padding: v.$space-lg;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  background: v.$color-surface;
+}
+
+.head {
+  margin-bottom: 0.5rem;
+}
+
+.command {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$color-accent-hover;
+}
+
+.description {
+  font-size: 0.92rem;
+  color: v.$color-text-secondary;
+  margin: 0 0 v.$space-md;
+  line-height: 1.6;
+}
+
+.args {
+  margin-bottom: v.$space-md;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  overflow: hidden;
+}
+
+.argRow {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.85rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid v.$color-border;
+  }
+}
+
+.flag {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  color: v.$syntax-type;
+  font-size: 0.82rem;
+}
+
+.argDesc {
+  color: v.$color-text-secondary;
+}
+
+.outputWrap {
+  margin-top: v.$space-sm;
+}
+
+.outputLabel {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: v.$color-text-secondary;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: v.$bp-mobile) {
+  .argRow {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}

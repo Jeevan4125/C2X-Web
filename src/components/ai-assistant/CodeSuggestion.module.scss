@@ -1,0 +1,60 @@
+@use "../../styles/variables" as v;
+
+.wrap {
+  margin-top: 0.6rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+
+.code {
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #d4d4d4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-top: 1px solid v.$color-border;
+  background-color: v.$color-panel;
+}
+
+.applyBtn,
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid v.$color-border;
+  background-color: transparent;
+  color: v.$color-text-secondary;
+  transition: background-color v.$transition-fast, color v.$transition-fast, border-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+  }
+}
+
+.applyBtn {
+  background-color: v.$color-accent;
+  border-color: v.$color-accent;
+  color: #fff;
+
+  &:hover {
+    background-color: v.$color-accent-hover;
+    border-color: v.$color-accent-hover;
+    color: #fff;
+  }
+}

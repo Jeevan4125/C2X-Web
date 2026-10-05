@@ -1,0 +1,183 @@
+@use "../../styles/variables" as v;
+
+.page {
+  overflow-x: hidden;
+}
+
+.section {
+  padding-top: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+  margin-bottom: v.$space-lg;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  padding: 0.7rem 0.9rem;
+  background-color: v.$color-surface;
+  color: v.$color-text-secondary;
+  max-width: 420px;
+  transition: border-color v.$transition-fast;
+
+  &:focus-within {
+    border-color: v.$color-accent;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: v.$color-text-primary;
+    font-size: 0.875rem;
+
+    &::placeholder {
+      color: v.$color-text-secondary;
+    }
+  }
+}
+
+.categoryRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.categoryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  transition:
+    color v.$transition-fast,
+    border-color v.$transition-fast,
+    background-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+  }
+
+  &.active {
+    color: #fff;
+    background-color: v.$color-accent;
+    border-color: v.$color-accent;
+  }
+}
+
+.resultCount {
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+  margin: 0 0 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+
+  @media (min-width: v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: v.$bp-laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.emptyState {
+  text-align: center;
+  color: v.$color-text-secondary;
+  padding: v.$space-3xl 0;
+}
+
+.sectionBlock {
+  padding: v.$space-3xl 0;
+  border-top: 1px solid v.$color-border;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.infoCard {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: v.$space-md;
+  margin-top: v.$space-2xl;
+}
+
+.workflowStep {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+
+  .stepBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(0, 122, 204, 0.15);
+    color: v.$color-accent-hover;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: v.$space-xs;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: v.$color-text-secondary;
+    line-height: 1.5;
+  }
+}

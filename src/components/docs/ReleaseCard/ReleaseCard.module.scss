@@ -1,0 +1,119 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  padding: v.$space-lg v.$space-xl;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  background: v.$color-surface;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.versionRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.version {
+  font-size: 1.25rem;
+  font-weight: 650;
+  color: v.$color-text-primary;
+  margin: 0;
+}
+
+.tag {
+  font-size: 0.68rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.latest {
+  color: #4ec9b0;
+  border-color: rgba(78, 201, 176, 0.4);
+  background: rgba(78, 201, 176, 0.1);
+}
+
+.stable {
+  color: v.$color-accent-hover;
+  border-color: rgba(0, 122, 204, 0.4);
+  background: rgba(0, 122, 204, 0.08);
+}
+
+.legacy {
+  color: v.$color-text-secondary;
+  border-color: v.$color-border;
+  background: v.$color-panel;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+}
+
+.summary {
+  font-size: 0.92rem;
+  color: v.$color-text-secondary;
+  margin: 0 0 v.$space-md;
+  line-height: 1.65;
+}
+
+.groups {
+  display: grid;
+  gap: v.$space-md;
+}
+
+.group {
+  padding-top: 0.6rem;
+  border-top: 1px solid v.$color-border;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.45rem;
+}
+
+.features {
+  color: #4ec9b0;
+}
+
+.improvements {
+  color: v.$color-accent-hover;
+}
+
+.fixes {
+  color: #e6a03c;
+}
+
+.breaking {
+  color: #f14c4c;
+}
+
+.items {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: v.$color-text-secondary;
+  font-size: 0.88rem;
+  line-height: 1.7;
+
+  li {
+    margin-bottom: 0.2rem;
+  }
+}

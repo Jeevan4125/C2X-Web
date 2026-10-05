@@ -1,0 +1,38 @@
+@use "../../styles/variables" as v;
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  padding: v.$space-md v.$space-lg;
+  background: v.$color-surface;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-2px);
+  }
+}
+
+.icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.category {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+}

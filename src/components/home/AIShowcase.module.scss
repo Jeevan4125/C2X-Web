@@ -1,0 +1,113 @@
+@use "../../styles/variables" as v;
+
+.showcase {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: v.$space-3xl;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: v.$color-accent-hover;
+  margin-bottom: v.$space-md;
+
+  svg {
+    color: v.$color-accent-hover;
+  }
+}
+
+.title {
+  font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  line-height: 1.2;
+  margin-bottom: v.$space-md;
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.chatWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chatCard {
+  background: v.$color-surface;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.chatHeader {
+  padding: v.$space-md v.$space-lg;
+  border-bottom: 1px solid v.$color-border;
+  background: v.$color-panel;
+}
+
+.chatHeaderInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: v.$color-text-primary;
+
+  svg {
+    color: v.$color-accent-hover;
+  }
+}
+
+.statusDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3fb950;
+  margin-left: 0.3rem;
+}
+
+.statusText {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+}

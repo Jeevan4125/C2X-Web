@@ -1,0 +1,30 @@
+@use "../../../styles/variables" as v;
+
+.hero {
+  padding-top: v.$space-4xl;
+  padding-bottom: v.$space-xl;
+
+  @media (max-width: v.$bp-tablet) {
+    padding-top: v.$space-3xl;
+  }
+}
+
+.copy {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.demoSlot {
+  margin-top: v.$space-3xl;
+}

@@ -1,0 +1,221 @@
+@use "../../styles/variables" as v;
+
+.subscriptionSection {
+  padding: v.$space-4xl 0;
+  background: linear-gradient(180deg, v.$color-surface 0%, v.$color-background 100%);
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: v.$space-2xl;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw + 1rem, 2.8rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: v.$color-text-secondary;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.formBox {
+  max-width: 580px;
+  margin: 0 auto v.$space-2xl;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+}
+
+.inputGroup {
+  display: flex;
+  gap: v.$space-xs;
+  background: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: 4px;
+  transition: border-color v.$transition-fast;
+
+  &:focus-within {
+    border-color: v.$color-accent;
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    flex-direction: column;
+    padding: v.$space-xs;
+  }
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: v.$color-text-primary;
+  outline: none;
+
+  &::placeholder {
+    color: v.$color-text-secondary;
+  }
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: v.$color-accent;
+  border: none;
+  border-radius: v.$radius-sm;
+  cursor: pointer;
+  transition: background-color v.$transition-fast;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background-color: v.$color-accent-hover;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.supportNote {
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+  text-align: center;
+  margin-top: v.$space-xs;
+}
+
+.errorMessage {
+  font-size: 0.85rem;
+  color: #f87171;
+  text-align: center;
+  margin-top: v.$space-xs;
+}
+
+.successBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: v.$space-lg;
+  background: rgba(78, 201, 176, 0.08);
+  border: 1px solid rgba(78, 201, 176, 0.25);
+  border-radius: v.$radius-md;
+}
+
+.successIcon {
+  color: #4ec9b0;
+  margin-bottom: v.$space-xs;
+}
+
+.successTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: 0.25rem;
+}
+
+.successText {
+  font-size: 0.9rem;
+  color: v.$color-text-secondary;
+}
+
+.receivesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: v.$space-lg;
+  margin-top: v.$space-2xl;
+}
+
+.receiveCard {
+  background: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xs;
+
+  .cardIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: v.$radius-sm;
+    background: rgba(0, 122, 204, 0.12);
+    color: v.$color-accent-hover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: v.$space-xs;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: v.$color-text-secondary;
+    line-height: 1.55;
+  }
+}
+
+.privacyText {
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+  text-align: center;
+  margin-top: v.$space-2xl;
+
+  a {
+    color: v.$color-accent-hover;
+    text-decoration: underline;
+
+    &:hover {
+      color: v.$color-text-primary;
+    }
+  }
+}

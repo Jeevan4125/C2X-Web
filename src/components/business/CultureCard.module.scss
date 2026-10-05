@@ -1,0 +1,51 @@
+@use "../../styles/variables" as v;
+
+.card {
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  text-align: center;
+  transition: all v.$transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, v.$color-accent, v.$color-accent-hover);
+    opacity: 0;
+    transition: opacity v.$transition-base;
+  }
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-4px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: v.$space-md;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+}

@@ -1,0 +1,281 @@
+@use "../../styles/variables" as v;
+
+.pressKit {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.hero {
+  padding: v.$space-4xl 0 v.$space-3xl;
+  background: linear-gradient(
+    180deg,
+    v.$color-surface 0%,
+    v.$color-background 100%
+  );
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0 v.$space-2xl;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-lg;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: v.$color-accent-hover;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw + 1.5rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: v.$color-text-primary;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  }
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  line-height: 1.7;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  text-align: center;
+  margin-bottom: v.$space-2xl;
+}
+
+.assets {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.assetsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.colors {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.colorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: v.$space-md;
+  margin-top: v.$space-2xl;
+}
+
+.typography {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.typographyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.fontCard {
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+}
+
+.fontHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: v.$space-md;
+}
+
+.fontName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.fontCategory {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  background: rgba(0, 122, 204, 0.1);
+  border-radius: 999px;
+  color: v.$color-accent-hover;
+}
+
+.fontSample {
+  font-size: 1.5rem;
+  color: v.$color-text-primary;
+  padding: v.$space-md 0;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+  margin-bottom: v.$space-md;
+}
+
+.fontMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  color: v.$color-text-secondary;
+  transition: all v.$transition-fast;
+  cursor: pointer;
+
+  &:hover {
+    border-color: v.$color-accent;
+    color: v.$color-text-primary;
+  }
+}
+
+.mediaKit {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-sm;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mediaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: v.$space-md v.$space-lg;
+  background: v.$color-background;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+  }
+}
+
+.mediaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.mediaLabel {
+  font-weight: 500;
+  color: v.$color-text-primary;
+}
+
+.mediaMeta {
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+}
+
+.contact {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.contactCard {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: v.$space-3xl;
+  text-align: center;
+  background: v.$color-surface;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-md;
+  }
+
+  p {
+    color: v.$color-text-secondary;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: v.$space-xl;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+  margin-bottom: v.$space-xl;
+}
+
+.contactEmail {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: v.$color-accent-hover;
+}
+
+.contactResponse {
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+}

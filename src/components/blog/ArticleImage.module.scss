@@ -1,0 +1,65 @@
+@use "../../styles/variables" as v;
+
+.figure {
+  margin: v.$space-lg 0;
+
+  @media (max-width: v.$bp-tablet) {
+    margin: v.$space-md 0;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  background: v.$color-panel;
+  position: relative;
+
+  &.ratio-16-9 {
+    aspect-ratio: 16/9;
+  }
+
+  &.ratio-4-3 {
+    aspect-ratio: 4/3;
+  }
+
+  &.ratio-1-1 {
+    aspect-ratio: 1/1;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity v.$transition-slow;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-sm;
+  padding: v.$space-3xl;
+  color: v.$color-text-secondary;
+
+  svg {
+    color: v.$color-text-secondary;
+    opacity: 0.5;
+  }
+}
+
+.caption {
+  margin-top: v.$space-sm;
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}

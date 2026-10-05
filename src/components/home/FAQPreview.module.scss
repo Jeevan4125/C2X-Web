@@ -1,0 +1,44 @@
+@use "../../styles/variables" as v;
+
+.list {
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid v.$color-border;
+}
+
+.item {
+  border-bottom: 1px solid v.$color-border;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0.25rem;
+  background: transparent;
+  text-align: left;
+  color: v.$color-text-primary;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: v.$color-accent;
+  transition: transform v.$transition-base;
+
+  &.open {
+    transform: rotate(45deg);
+  }
+}
+
+.answerWrap {
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 0.25rem 1.25rem;
+  max-width: 640px;
+}

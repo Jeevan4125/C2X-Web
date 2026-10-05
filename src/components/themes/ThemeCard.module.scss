@@ -1,0 +1,116 @@
+@use "../../styles/variables" as v;
+
+.card {
+  text-align: left;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  transition: border-color v.$transition-base;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: #3a3a3a;
+  }
+
+  &.active {
+    border-color: v.$color-accent;
+  }
+}
+
+.screenshot {
+  border-bottom: 1px solid v.$color-border;
+}
+
+.screenshotBar {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.screenshotBody {
+  padding: 14px 16px 18px;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.screenshotLine {
+  white-space: nowrap;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: v.$space-md v.$space-lg 0;
+}
+
+.name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin: 0;
+}
+
+.author {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  margin: 0.15rem 0 0;
+}
+
+.activeBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: v.$color-accent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tokens {
+  display: flex;
+  gap: 5px;
+  padding: 0.8rem v.$space-lg 0;
+}
+
+.token {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: v.$space-md v.$space-lg;
+  margin-top: auto;
+}
+
+.downloads {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+}
+
+.installLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: v.$color-accent;
+}

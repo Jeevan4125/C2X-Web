@@ -1,0 +1,65 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  margin: v.$space-lg 0 v.$space-md;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.method {
+  flex-shrink: 0;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.22rem 0.55rem;
+  border-radius: v.$radius-sm;
+  border: 1px solid;
+}
+
+.get {
+  color: #4ec9b0;
+  border-color: rgba(78, 201, 176, 0.4);
+  background: rgba(78, 201, 176, 0.08);
+}
+
+.post {
+  color: v.$color-accent-hover;
+  border-color: rgba(0, 122, 204, 0.4);
+  background: rgba(0, 122, 204, 0.08);
+}
+
+.put {
+  color: #e6a03c;
+  border-color: rgba(230, 160, 60, 0.4);
+  background: rgba(230, 160, 60, 0.08);
+}
+
+.patch {
+  color: #c586c0;
+  border-color: rgba(197, 134, 192, 0.4);
+  background: rgba(197, 134, 192, 0.08);
+}
+
+.delete {
+  color: #f14c4c;
+  border-color: rgba(241, 76, 76, 0.4);
+  background: rgba(241, 76, 76, 0.08);
+}
+
+.path {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.95rem;
+  color: v.$color-text-primary;
+}
+
+.summary {
+  font-size: 0.92rem;
+  color: v.$color-text-secondary;
+  margin: 0;
+}

@@ -1,0 +1,81 @@
+@use "../../../styles/variables" as v;
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: v.$space-xl;
+}
+
+.searchBox {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  background: v.$color-surface;
+  color: v.$color-text-secondary;
+
+  input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: v.$color-text-primary;
+    font-size: 0.9rem;
+
+    &::placeholder {
+      color: v.$color-text-secondary;
+    }
+  }
+}
+
+.categoryTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.categoryTab {
+  appearance: none;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 550;
+  color: v.$color-text-secondary;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background v.$transition-fast, color v.$transition-fast, border-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+}
+
+.activeCategoryTab {
+  background: v.$color-accent;
+  border-color: v.$color-accent;
+  color: #ffffff;
+}
+
+.empty {
+  color: v.$color-text-secondary;
+  font-size: 0.9rem;
+}
+
+.section {
+  margin-bottom: v.$space-2xl;
+  scroll-margin-top: 6rem;
+
+  h2 {
+    font-size: clamp(1.35rem, 1.5vw + 1rem, 1.85rem);
+    font-weight: 650;
+    color: v.$color-text-primary;
+    margin-bottom: 0.85rem;
+  }
+}

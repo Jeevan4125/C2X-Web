@@ -1,0 +1,77 @@
+@use "../../styles/variables" as v;
+
+.tagFilter {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+  font-weight: 600;
+}
+
+.clear {
+  font-size: 0.75rem;
+  color: v.$color-accent-hover;
+  background: transparent;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  border-radius: v.$radius-sm;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-accent;
+    background: rgba(0, 122, 204, 0.1);
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  color: v.$color-text-secondary;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    background: v.$color-surface;
+    border-color: v.$color-accent-dim;
+    color: v.$color-text-primary;
+  }
+
+  &.selected {
+    background: rgba(0, 122, 204, 0.15);
+    border-color: v.$color-accent;
+    color: v.$color-accent-hover;
+  }
+}
+
+.tagIcon {
+  font-size: 0.8em;
+}
+
+.more {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  padding: 0.2rem 0.5rem;
+}

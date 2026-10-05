@@ -1,0 +1,159 @@
+@use "../../../styles/variables" as v;
+
+.wrapper {
+  margin: v.$space-lg 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: v.$space-lg;
+  position: sticky;
+  top: 4.5rem;
+  z-index: 2;
+  background: v.$color-background;
+  padding: 0.6rem 0;
+}
+
+.searchBox {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  background: v.$color-surface;
+  color: v.$color-text-secondary;
+
+  input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: v.$color-text-primary;
+    font-size: 0.88rem;
+
+    &::placeholder {
+      color: v.$color-text-secondary;
+    }
+  }
+}
+
+.osTabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  background: v.$color-surface;
+}
+
+.osTab {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 550;
+  color: v.$color-text-secondary;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background v.$transition-fast, color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+}
+
+.activeOsTab {
+  background: v.$color-accent;
+  color: #ffffff;
+}
+
+.empty {
+  color: v.$color-text-secondary;
+  font-size: 0.9rem;
+  padding: v.$space-lg 0;
+}
+
+.group {
+  margin-bottom: v.$space-xl;
+}
+
+.category {
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: v.$color-text-secondary;
+  margin-bottom: 0.6rem;
+}
+
+.table {
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  &:hover {
+    background: v.$color-panel;
+  }
+}
+
+.action {
+  color: v.$color-text-primary;
+}
+
+.keys {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.keyGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.kbd {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid v.$color-border;
+  background: v.$color-panel;
+  color: v.$color-text-primary;
+  box-shadow: 0 1px 0 v.$color-border;
+}
+
+.plus {
+  color: v.$color-text-secondary;
+  font-size: 0.75rem;
+}
+
+@media (max-width: v.$bp-mobile) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

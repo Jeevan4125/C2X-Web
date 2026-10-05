@@ -1,0 +1,235 @@
+@use "../../styles/variables" as v;
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.hero {
+  padding: v.$space-4xl 0 v.$space-3xl;
+  background: linear-gradient(
+    180deg,
+    v.$color-surface 0%,
+    v.$color-background 100%
+  );
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0 v.$space-2xl;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-lg;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: v.$color-accent-hover;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw + 1.5rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: v.$color-text-primary;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  }
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  line-height: 1.7;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.missionVision {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$space-2xl;
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: v.$space-xl;
+  }
+}
+
+.missionCard,
+.visionCard {
+  padding: v.$space-2xl;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-4px);
+  }
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: v.$space-md;
+}
+
+.missionCard h2,
+.visionCard h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+}
+
+.missionCard p,
+.visionCard p {
+  color: v.$color-text-secondary;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.stats {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  text-align: center;
+  margin-bottom: v.$space-2xl;
+}
+
+.timelineSection {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.culture {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.cultureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.leadership {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.leadershipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.technology {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: v.$space-md;
+  margin-top: v.$space-2xl;
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.philosophyCard {
+  padding: v.$space-xl;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.team {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}

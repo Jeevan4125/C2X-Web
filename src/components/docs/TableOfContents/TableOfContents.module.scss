@@ -1,0 +1,87 @@
+@use "../../../styles/variables" as v;
+
+.toc {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: v.$space-sm;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+  }
+
+  @media (max-width: v.$bp-laptop) {
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding: v.$space-md;
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: v.$radius-md;
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: v.$color-text-secondary;
+  padding-bottom: v.$space-sm;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nested {
+  padding-left: v.$space-md;
+}
+
+.link {
+  display: block;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  line-height: 1.4;
+  cursor: pointer;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  &.active {
+    color: v.$color-accent-hover;
+    border-color: v.$color-accent;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,70 @@
+@use "../../../styles/variables" as v;
+
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: v.$color-text-primary;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  transition: border-color v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+  }
+}
+
+.chevron {
+  color: v.$color-text-secondary;
+  transition: transform v.$transition-fast;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+  border-radius: v.$radius-sm;
+  transition: background v.$transition-fast, color v.$transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: v.$color-text-primary;
+  }
+
+  svg {
+    color: v.$color-accent-hover;
+  }
+}

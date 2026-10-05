@@ -1,0 +1,187 @@
+@use "../../styles/variables" as v;
+
+.card {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-lg;
+  transition: border-color v.$transition-base, background-color v.$transition-base;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: #3a3a3a;
+    background-color: v.$color-panel;
+  }
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-panel;
+  border: 1px solid v.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$color-accent;
+  margin-bottom: v.$space-md;
+  flex-shrink: 0;
+
+  .card:hover & {
+    border-color: v.$color-accent;
+  }
+}
+
+.title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: 0.4rem;
+}
+
+.description {
+  margin-bottom: v.$space-md;
+  min-height: 2.6em;
+}
+
+.previewWrap {
+  margin-top: auto;
+  border-top: 1px solid v.$color-border;
+  padding-top: v.$space-md;
+}
+
+.codePreview,
+.terminalPreview {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  background-color: v.$color-panel;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  padding: 0.6rem 0.7rem;
+  overflow: hidden;
+
+  .card:hover & {
+    border-color: #3a3a3a;
+  }
+}
+
+.codeLine {
+  display: flex;
+  gap: 0.6rem;
+  color: #d4d4d4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lineNum {
+  color: #4a4a4f;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.terminalPreview {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  color: v.$color-text-secondary;
+}
+
+.terminalIcon {
+  color: v.$color-accent;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.terminalLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &::before {
+    content: "$ ";
+    color: #4ec9b0;
+  }
+}
+
+.nodesPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+
+  svg {
+    color: v.$color-accent;
+    flex-shrink: 0;
+  }
+}
+
+.badgePreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.6875rem;
+  color: #4ec9b0;
+  background-color: rgba(78, 201, 176, 0.1);
+  border: 1px solid rgba(78, 201, 176, 0.25);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+
+.diffPreview {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  overflow: hidden;
+}
+
+.diffLine {
+  padding: 0.15rem 0.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: v.$color-text-secondary;
+  background-color: v.$color-panel;
+
+  &.added {
+    background-color: rgba(78, 201, 176, 0.1);
+    color: #4ec9b0;
+  }
+
+  &.removed {
+    background-color: rgba(244, 71, 71, 0.08);
+    color: #f47474;
+  }
+}
+
+.previewFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity v.$transition-base, transform v.$transition-base;
+
+  .card:hover & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

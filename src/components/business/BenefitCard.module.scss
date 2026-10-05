@@ -1,0 +1,32 @@
+@use "../../styles/variables" as v;
+
+.card {
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-4px);
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: v.$space-md;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+}

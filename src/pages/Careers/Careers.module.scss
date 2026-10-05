@@ -1,0 +1,173 @@
+@use "../../styles/variables" as v;
+
+.careers {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.hero {
+  padding: v.$space-4xl 0 v.$space-3xl;
+  background: linear-gradient(
+    180deg,
+    v.$color-surface 0%,
+    v.$color-background 100%
+  );
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0 v.$space-2xl;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-lg;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: v.$color-accent-hover;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw + 1.5rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: v.$color-text-primary;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  }
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  line-height: 1.7;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.benefits {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  text-align: center;
+  margin-bottom: v.$space-2xl;
+}
+
+.positions {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-sm;
+  justify-content: center;
+  margin-bottom: v.$space-2xl;
+}
+
+.filterBtn {
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid v.$color-border;
+  background: transparent;
+  color: v.$color-text-secondary;
+  font-size: 0.85rem;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: v.$color-text-primary;
+  }
+}
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+}
+
+.emptyState {
+  text-align: center;
+  padding: v.$space-3xl;
+  color: v.$color-text-secondary;
+}
+
+.hiringProcess {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonials {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}

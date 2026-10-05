@@ -1,0 +1,109 @@
+@use "../../styles/variables" as v;
+
+.card {
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateX(4px);
+  }
+}
+
+.link {
+  display: block;
+  padding: v.$space-xl;
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: v.$space-sm;
+  flex-wrap: wrap;
+  gap: v.$space-sm;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: v.$color-accent-hover;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meta {
+  display: flex;
+  gap: v.$space-md;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+}
+
+.overview {
+  font-size: 0.95rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+  margin-bottom: v.$space-md;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: v.$space-md;
+  padding-top: v.$space-md;
+  border-top: 1px solid v.$color-border;
+}
+
+.details {
+  display: flex;
+  gap: v.$space-lg;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+}
+
+.apply {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: v.$color-accent-hover;
+  transition: gap v.$transition-fast;
+
+  &:hover {
+    gap: 0.7rem;
+  }
+}

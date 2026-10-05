@@ -1,0 +1,135 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: 18px;
+  border: 1px solid v.$color-border;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    border-color: rgba(0, 122, 204, 0.2);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(0, 122, 204, 0.04);
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(0, 122, 204, 0.08);
+  color: v.$color-accent-hover;
+  margin-bottom: v.$space-md;
+  transition: all 0.25s ease;
+
+  .card:hover & {
+    background: rgba(0, 122, 204, 0.14);
+    box-shadow: 0 0 30px rgba(0, 122, 204, 0.06);
+  }
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-xs;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+  margin-bottom: v.$space-lg;
+}
+
+.downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: v.$space-md;
+}
+
+.downloadItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border-radius: v.$radius-sm;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: v.$color-accent;
+    background: rgba(0, 122, 204, 0.05);
+
+    .downloadIcon {
+      opacity: 1;
+      transform: translateX(2px);
+    }
+  }
+}
+
+.downloadInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.downloadLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: v.$color-text-primary;
+}
+
+.downloadFormat {
+  padding: 0.1rem 0.5rem;
+  background: v.$color-background;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: v.$color-text-secondary;
+}
+
+.downloadRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.downloadSize {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  opacity: 0.6;
+}
+
+.downloadIcon {
+  opacity: 0.3;
+  transition: all 0.25s ease;
+  color: v.$color-accent-hover;
+
+  .downloadItem:hover & {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+}
+
+.recommended {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  opacity: 0.7;
+  padding-top: v.$space-sm;
+  border-top: 1px solid v.$color-border;
+  margin-top: auto;
+}

@@ -1,0 +1,63 @@
+@use "../../styles/variables" as v;
+
+.useCasesSection {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.card {
+  background: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+  display: flex;
+  flex-direction: column;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-3px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  margin-bottom: v.$space-md;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: v.$radius-sm;
+  background: rgba(0, 122, 204, 0.12);
+  color: v.$color-accent-hover;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+}

@@ -1,0 +1,284 @@
+@use "../../styles/variables" as v;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: v.$z-navbar;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(9, 9, 11, 0.95);
+  border-bottom: 1px solid v.$color-border;
+  transition: background-color v.$transition-base;
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-lg;
+  padding: 0 v.$space-md;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: v.$color-text-primary;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  display: block;
+
+  @media (max-width: v.$bp-tablet) {
+    height: 34px;
+  }
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: v.$color-text-primary;
+  letter-spacing: -0.01em;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1.25rem;
+  }
+}
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+
+  @media (min-width: v.$bp-laptop) {
+    display: flex;
+  }
+}
+
+.navItemWrapper {
+  position: relative;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  border-radius: v.$radius-sm;
+  transition:
+    color v.$transition-fast,
+    background-color v.$transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-text-primary;
+    background-color: v.$color-panel;
+  }
+
+  &.active {
+    color: v.$color-text-primary;
+  }
+}
+
+.chevronIcon {
+  opacity: 0.5;
+  transition: transform v.$transition-fast;
+}
+
+.navItemWrapper:hover .chevronIcon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: -1px;
+  height: 2px;
+  background-color: v.$color-accent;
+  border-radius: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.iconButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  color: v.$color-text-secondary;
+  background: transparent;
+  transition:
+    border-color v.$transition-fast,
+    color v.$transition-fast,
+    background-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+    background-color: v.$color-panel;
+  }
+
+  @media (min-width: v.$bp-laptop) {
+    display: flex;
+  }
+}
+
+.mobileToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  background: transparent;
+  color: v.$color-text-primary;
+
+  @media (min-width: v.$bp-laptop) {
+    display: none;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: v.$z-mobile-menu - 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  @media (min-width: v.$bp-laptop) {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 64px;
+  right: 0;
+  width: 320px;
+  max-width: 85%;
+  height: calc(100vh - 64px);
+  z-index: v.$z-mobile-menu;
+  background-color: v.$color-background;
+  border-left: 1px solid v.$color-border;
+  padding: v.$space-lg 1.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  @media (min-width: v.$bp-laptop) {
+    display: none;
+  }
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.9rem 0.25rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: v.$color-text-primary;
+  border-bottom: 1px solid v.$color-border;
+  text-decoration: none;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.mobileNavGroup {
+  margin-bottom: v.$space-md;
+  padding-bottom: v.$space-md;
+  border-bottom: 1px solid v.$color-border;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.mobileSubTitle {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+  margin: v.$space-sm 0 v.$space-xs;
+}
+
+.mobileSubLink {
+  display: block;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.9rem;
+  color: v.$color-text-secondary;
+  text-decoration: none;
+  transition: color v.$transition-fast;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    color: v.$color-accent-hover;
+  }
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: v.$space-xl;
+  padding-bottom: v.$space-xl;
+}
+
+.mobileGitHubBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: v.$radius-sm;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  color: v.$color-text-secondary;
+  text-decoration: none;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+  }
+}

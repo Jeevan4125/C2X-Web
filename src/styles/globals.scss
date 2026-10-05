@@ -1,0 +1,84 @@
+@use "./variables" as v;
+@use "./typography";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; // Changed from auto to smooth for native scrolling
+  background-color: v.$color-background;
+}
+
+body {
+  margin: 0;
+  background-color: v.$color-background;
+  color: v.$color-text-primary;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: v.$color-accent-dim;
+  color: v.$color-text-primary;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: v.$color-background;
+}
+::-webkit-scrollbar-thumb {
+  background: v.$color-border;
+  border-radius: 6px;
+  &:hover {
+    background: v.$color-accent-dim;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid v.$color-accent;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container-app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: v.$bp-wide) {
+    max-width: 1440px;
+  }
+}
+
+.section-pad {
+  padding-top: v.$space-4xl;
+  padding-bottom: v.$space-4xl;
+
+  @media (max-width: v.$bp-tablet) {
+    padding-top: v.$space-3xl;
+    padding-bottom: v.$space-3xl;
+  }
+}

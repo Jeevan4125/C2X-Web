@@ -1,0 +1,96 @@
+@use "../../styles/variables" as v;
+
+.callout {
+  padding: v.$space-md v.$space-lg;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  margin: v.$space-lg 0;
+  background: v.$color-surface;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+  margin-bottom: v.$space-sm;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.content {
+  color: v.$color-text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info {
+  border-left-color: v.$color-accent;
+  border-left-width: 4px;
+
+  .icon {
+    color: v.$color-accent-hover;
+  }
+
+  .title {
+    color: v.$color-accent-hover;
+  }
+}
+
+.warning {
+  border-left-color: #f59e0b;
+  border-left-width: 4px;
+
+  .icon {
+    color: #f59e0b;
+  }
+
+  .title {
+    color: #f59e0b;
+  }
+}
+
+.error {
+  border-left-color: #ef4444;
+  border-left-width: 4px;
+
+  .icon {
+    color: #ef4444;
+  }
+
+  .title {
+    color: #ef4444;
+  }
+}
+
+.success {
+  border-left-color: #10b981;
+  border-left-width: 4px;
+
+  .icon {
+    color: #10b981;
+  }
+
+  .title {
+    color: #10b981;
+  }
+}
+
+.tip {
+  border-left-color: #8b5cf6;
+  border-left-width: 4px;
+
+  .icon {
+    color: #8b5cf6;
+  }
+
+  .title {
+    color: #8b5cf6;
+  }
+}

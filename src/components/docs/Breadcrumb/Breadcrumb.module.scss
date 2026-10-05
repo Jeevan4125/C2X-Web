@@ -1,0 +1,36 @@
+@use "../../../styles/variables" as v;
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: v.$color-text-secondary;
+  margin-bottom: v.$space-lg;
+}
+
+.segment {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sep {
+  margin: 0 0.35rem;
+  opacity: 0.5;
+}
+
+.crumb {
+  color: v.$color-text-secondary;
+  display: inline-flex;
+  align-items: center;
+  transition: color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-accent-hover;
+  }
+}
+
+.current {
+  color: v.$color-text-primary;
+  font-weight: 500;
+}

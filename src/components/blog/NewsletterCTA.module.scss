@@ -1,0 +1,97 @@
+@use "../../styles/variables" as v;
+
+.cta {
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  padding: v.$space-4xl 0;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-md;
+}
+
+.icon {
+  color: v.$color-accent-hover;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: v.$color-text-primary;
+}
+
+.description {
+  color: v.$color-text-secondary;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+  padding: v.$space-md v.$space-xl;
+  background: rgba(0, 200, 100, 0.1);
+  border: 1px solid rgba(0, 200, 100, 0.2);
+  border-radius: v.$radius-sm;
+  color: #4ade80;
+}
+
+.form {
+  width: 100%;
+  max-width: 480px;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: v.$space-sm;
+
+  @media (max-width: v.$bp-mobile) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  background: v.$color-panel;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  color: v.$color-text-primary;
+  font-size: 0.95rem;
+  transition: border-color v.$transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-accent;
+  }
+
+  &::placeholder {
+    color: v.$color-text-secondary;
+  }
+}
+
+.button {
+  flex-shrink: 0;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  margin-top: v.$space-sm;
+}

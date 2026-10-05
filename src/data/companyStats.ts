@@ -1,0 +1,58 @@
+import type { Statistic } from "@/types/statistic";
+
+export const COMPANY_STATS: Statistic[] = [
+  {
+    id: "1",
+    label: "Supported Languages & Syntaxes",
+    value: 50,
+    suffix: "+",
+    prefix: "",
+    decimals: 0,
+    icon: "💻",
+  },
+  {
+    id: "2",
+    label: "Sync Target Latency",
+    value: 50,
+    suffix: "ms",
+    prefix: "<",
+    decimals: 0,
+    icon: "⚡",
+  },
+  {
+    id: "3",
+    label: "Core IDE Modules",
+    value: 6,
+    suffix: "",
+    prefix: "",
+    decimals: 0,
+    icon: "🧩",
+  },
+  {
+    id: "4",
+    label: "Open VS Code API Compatibility",
+    value: 100,
+    suffix: "%",
+    prefix: "",
+    decimals: 0,
+    icon: "🔌",
+  },
+  {
+    id: "5",
+    label: "Workspace Context Integration",
+    value: 100,
+    suffix: "%",
+    prefix: "",
+    decimals: 0,
+    icon: "🧠",
+  },
+  {
+    id: "6",
+    label: "Multiplayer Room Limit",
+    value: 20,
+    suffix: " users",
+    prefix: "Up to ",
+    decimals: 0,
+    icon: "👥",
+  },
+];

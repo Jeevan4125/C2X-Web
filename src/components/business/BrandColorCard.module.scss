@@ -1,0 +1,73 @@
+@use "../../styles/variables" as v;
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  padding: v.$space-md v.$space-lg;
+  background: v.$color-surface;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+  }
+}
+
+.swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: v.$color-text-primary;
+  margin-bottom: 2px;
+}
+
+.values {
+  display: flex;
+  gap: v.$space-sm;
+  font-size: 0.7rem;
+  color: v.$color-text-secondary;
+  flex-wrap: wrap;
+}
+
+.hex {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.rgb {
+  font-family: "JetBrains Mono", monospace;
+  opacity: 0.7;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  background: transparent;
+  color: v.$color-text-secondary;
+  transition: all v.$transition-fast;
+  flex-shrink: 0;
+
+  &:hover {
+    border-color: v.$color-accent;
+    color: v.$color-text-primary;
+  }
+}

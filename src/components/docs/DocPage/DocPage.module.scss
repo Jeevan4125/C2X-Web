@@ -1,0 +1,97 @@
+@use "../../../styles/variables" as v;
+
+.page {
+  min-width: 0;
+}
+
+.header {
+  margin-bottom: v.$space-2xl;
+  padding-bottom: v.$space-lg;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  max-width: 640px;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: v.$color-text-secondary;
+}
+
+.body {
+  :global(h2) {
+    font-size: clamp(1.35rem, 1.5vw + 1rem, 1.85rem);
+    font-weight: 650;
+    color: v.$color-text-primary;
+    margin-top: v.$space-2xl;
+    margin-bottom: 0.85rem;
+    scroll-margin-top: 6rem;
+  }
+
+  :global(h3) {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-top: v.$space-xl;
+    margin-bottom: 0.65rem;
+    scroll-margin-top: 6rem;
+  }
+
+  :global(p) {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: v.$color-text-secondary;
+    margin-bottom: 1rem;
+  }
+
+  :global(ul),
+  :global(ol) {
+    color: v.$color-text-secondary;
+    line-height: 1.75;
+    margin: 0 0 1.1rem 1.25rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  :global(strong) {
+    color: v.$color-text-primary;
+    font-weight: 600;
+  }
+
+  :global(code) {
+    font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.06);
+    color: v.$color-text-primary;
+    padding: 0.12em 0.4em;
+    border-radius: 4px;
+  }
+
+  :global(a) {
+    color: v.$color-accent-hover;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: v.$color-accent;
+    }
+  }
+
+  :global(img) {
+    width: 100%;
+    border-radius: v.$radius-md;
+    border: 1px solid v.$color-border;
+    margin: v.$space-lg 0;
+  }
+}

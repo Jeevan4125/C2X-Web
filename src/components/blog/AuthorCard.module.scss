@@ -1,0 +1,87 @@
+@use "../../styles/variables" as v;
+
+.card {
+  display: flex;
+  gap: v.$space-xl;
+  padding: v.$space-xl;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: v.$space-md;
+  }
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: v.$color-accent-dim;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+  }
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: v.$color-text-primary;
+}
+
+.title {
+  font-size: 0.9rem;
+  color: v.$color-accent-hover;
+}
+
+.bio {
+  color: v.$color-text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.social {
+  display: flex;
+  gap: v.$space-sm;
+  margin-top: v.$space-sm;
+
+  @media (max-width: v.$bp-tablet) {
+    justify-content: center;
+  }
+}
+
+.socialLink {
+  padding: 0.4rem;
+  border-radius: v.$radius-sm;
+  color: v.$color-text-secondary;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    background: v.$color-panel;
+  }
+}

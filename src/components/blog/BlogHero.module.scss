@@ -1,0 +1,113 @@
+@use "../../styles/variables" as v;
+
+.hero {
+  background: linear-gradient(
+    180deg,
+    v.$color-surface 0%,
+    v.$color-background 100%
+  );
+  border-bottom: 1px solid v.$color-border;
+  padding: v.$space-4xl 0 v.$space-3xl;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0 v.$space-2xl;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-lg;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: v.$color-accent-hover;
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw + 1.5rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: v.$color-text-primary;
+  max-width: 800px;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  }
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: v.$color-text-secondary;
+  max-width: 600px;
+  line-height: 1.7;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: v.$space-xl;
+  padding-top: v.$space-md;
+  border-top: 1px solid v.$color-border;
+  width: 100%;
+  max-width: 600px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+
+  svg {
+    color: v.$color-accent-hover;
+  }
+}
+
+.statValue {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: v.$color-text-primary;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.7rem;
+  color: v.$color-text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,55 @@
+@use "../../styles/variables" as v;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-sm;
+  padding: v.$space-lg 0;
+}
+
+.pages {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 0.5rem;
+  border-radius: v.$radius-sm;
+  border: 1px solid transparent;
+  background: transparent;
+  color: v.$color-text-secondary;
+  font-size: 0.9rem;
+  transition: all v.$transition-fast;
+
+  &:hover:not(:disabled) {
+    background: v.$color-panel;
+    border-color: v.$color-border;
+    color: v.$color-text-primary;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background: v.$color-accent;
+    color: v.$color-text-primary;
+    border-color: v.$color-accent;
+
+    &:hover {
+      background: v.$color-accent-hover;
+      border-color: v.$color-accent-hover;
+    }
+  }
+}
+
+.arrow {
+  min-width: 36px;
+}

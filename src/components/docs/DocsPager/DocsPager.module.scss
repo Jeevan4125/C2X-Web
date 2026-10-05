@@ -1,0 +1,56 @@
+@use "../../../styles/variables" as v;
+
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$space-md;
+  margin-top: v.$space-3xl;
+  padding-top: v.$space-xl;
+  border-top: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  background: v.$color-surface;
+  transition:
+    border-color v.$transition-fast,
+    transform v.$transition-fast,
+    background v.$transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    background: rgba(0, 122, 204, 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+.next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.direction {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: v.$color-text-secondary;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}

@@ -1,0 +1,360 @@
+@use "../../styles/variables" as v;
+
+.page {
+  overflow-x: hidden;
+}
+
+// ===== Hero =====
+.heroWrapper {
+  position: relative;
+}
+
+.heroBadge {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.latestBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.15);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: v.$color-accent-hover;
+  letter-spacing: 0.02em;
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+// ===== Platforms =====
+.platformsSection {
+  padding-top: v.$space-2xl;
+}
+
+.platformGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+
+  @media (min-width: v.$bp-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ===== System Requirements =====
+.requirementsSection {
+  background-color: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.requirementsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+
+  @media (min-width: v.$bp-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reqLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-lg;
+  margin-top: v.$space-xl;
+  justify-content: center;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+
+  svg {
+    color: v.$color-accent;
+  }
+}
+
+// ===== Installation Guide =====
+.installSection {
+  padding-top: v.$space-2xl;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+  max-width: 760px;
+}
+
+.stepItem {
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  background-color: v.$color-surface;
+  overflow: hidden;
+  transition: border-color v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+  }
+}
+
+.stepHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  padding: v.$space-md v.$space-lg;
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: v.$color-text-primary;
+  transition: background-color v.$transition-fast;
+
+  &:hover {
+    background-color: v.$color-panel;
+  }
+}
+
+.stepNumber {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: v.$color-panel;
+  border: 1px solid v.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: v.$color-accent;
+}
+
+.stepTitle {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.chevron {
+  color: v.$color-text-secondary;
+  transition: transform v.$transition-fast;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.stepBody {
+  padding: 0 v.$space-lg v.$space-lg calc(v.$space-lg + 26px + v.$space-md);
+}
+
+.stepCommand {
+  margin: 0.75rem 0 0;
+  background-color: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  padding: 0.65rem 0.9rem;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.8125rem;
+  color: #4ec9b0;
+  overflow-x: auto;
+}
+
+// ===== Release Channel =====
+.channelSection {
+  background-color: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.channelTabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background-color: v.$color-panel;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  margin-bottom: v.$space-lg;
+  flex-wrap: wrap;
+}
+
+.channelTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: v.$radius-sm;
+  background: transparent;
+  border: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  transition:
+    background-color v.$transition-fast,
+    color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+}
+
+.channelTabActive {
+  background-color: v.$color-accent;
+  color: v.$color-text-primary;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+}
+
+.channelPanel {
+  background-color: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-xl;
+}
+
+.channelPanelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: v.$space-md;
+  flex-wrap: wrap;
+  margin-bottom: v.$space-lg;
+  padding-bottom: v.$space-lg;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.channelName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin: 0 0 0.35rem;
+}
+
+.stabilityBadge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+
+  &.Production {
+    color: #4ec9b0;
+    background-color: rgba(78, 201, 176, 0.12);
+  }
+
+  &.Beta {
+    color: v.$color-accent;
+    background-color: v.$color-accent-dim;
+  }
+
+  &.Experimental {
+    color: #dcdcaa;
+    background-color: rgba(220, 220, 170, 0.12);
+  }
+}
+
+.channelMeta {
+  display: flex;
+  gap: v.$space-3xl;
+  flex-wrap: wrap;
+}
+
+.channelMetaLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  margin-bottom: 0.3rem;
+}
+
+.channelMetaValue {
+  display: block;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.9375rem;
+  color: v.$color-text-primary;
+}
+
+// ===== Checksums =====
+.checksumSection {
+  padding-top: v.$space-2xl;
+}
+
+.checksumNote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: v.$space-lg;
+}
+
+.checksumNoteIcon {
+  color: v.$color-accent;
+  flex-shrink: 0;
+}
+
+// ===== Version History =====
+.historySection {
+  padding-top: v.$space-2xl;
+}
+
+.timeline {
+  max-width: 720px;
+}
+
+.troubleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.troubleCard {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}

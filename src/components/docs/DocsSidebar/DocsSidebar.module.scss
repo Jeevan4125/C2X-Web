@@ -1,0 +1,122 @@
+@use "../../../styles/variables" as v;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  height: 100%;
+}
+
+.header {
+  padding-bottom: v.$space-md;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.4rem 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+}
+
+.chevron {
+  transition: transform v.$transition-base;
+
+  &.collapsed {
+    transform: rotate(-90deg);
+  }
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.25rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: v.$radius-sm;
+  font-size: 0.87rem;
+  color: v.$color-text-secondary;
+  border-left: 2px solid transparent;
+  transition:
+    color v.$transition-fast,
+    background v.$transition-fast,
+    border-color v.$transition-fast;
+  text-decoration: none;
+
+  svg {
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  &:hover {
+    color: v.$color-text-primary;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  &.active {
+    color: v.$color-accent-hover;
+    background: rgba(0, 122, 204, 0.1);
+    border-color: v.$color-accent;
+    font-weight: 500;
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  &.disabled {
+    color: #5c5c5c;
+    cursor: default;
+
+    &:hover {
+      background: transparent;
+      color: #5c5c5c;
+    }
+  }
+}
+
+.soonTag {
+  margin-left: auto;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #7a7a7a;
+}

@@ -1,0 +1,46 @@
+@use "../../../styles/variables" as v;
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: v.$space-lg;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: v.$color-accent-hover;
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.15);
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  background: v.$color-border;
+  margin: 0.4rem 0;
+}
+
+.content {
+  padding-bottom: v.$space-xl;
+}
+
+@media (max-width: v.$bp-mobile) {
+  .row {
+    grid-template-columns: 16px 1fr;
+    gap: v.$space-md;
+  }
+}

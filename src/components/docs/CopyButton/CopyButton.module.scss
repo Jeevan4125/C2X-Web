@@ -1,0 +1,31 @@
+@use "../../../styles/variables" as v;
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  background: transparent;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  transition: color v.$transition-fast, border-color v.$transition-fast, background v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: v.$color-accent-dim;
+    background: rgba(0, 122, 204, 0.08);
+  }
+
+  &.copied {
+    color: #4ec9b0;
+    border-color: rgba(78, 201, 176, 0.4);
+    background: rgba(78, 201, 176, 0.08);
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}

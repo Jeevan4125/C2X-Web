@@ -1,0 +1,284 @@
+@use "../../styles/variables" as v;
+
+.window {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+}
+
+.titleBar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  background-color: v.$color-panel;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.dotRed { background: #ff5f57; }
+.dotYellow { background: #febc2e; }
+.dotGreen { background: #28c840; }
+
+.titleLabel {
+  margin-left: 10px;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+}
+
+.body {
+  display: flex;
+  min-height: 420px;
+}
+
+.activityBar {
+  width: 48px;
+  flex-shrink: 0;
+  background-color: v.$color-surface;
+  border-right: 1px solid v.$color-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  gap: 4px;
+}
+
+.activityIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$color-text-secondary;
+  border-left: 2px solid transparent;
+  transition: color v.$transition-fast;
+
+  &.active {
+    color: v.$color-text-primary;
+    border-left-color: v.$color-accent;
+  }
+}
+
+.sidebar {
+  width: 190px;
+  flex-shrink: 0;
+  background-color: v.$color-surface;
+  border-right: 1px solid v.$color-border;
+  padding: 10px 0;
+  display: none;
+
+  @media (min-width: v.$bp-tablet) {
+    display: block;
+  }
+}
+
+.sidebarHeader {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+  text-transform: uppercase;
+  padding: 4px 16px 8px;
+}
+
+.fileTree {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 16px;
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+  cursor: default;
+
+  &.selected {
+    background-color: #1f2937;
+    color: v.$color-text-primary;
+  }
+
+  &.nested {
+    padding-left: 30px;
+  }
+}
+
+.editorArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tabRow {
+  display: flex;
+  background-color: v.$color-surface;
+  border-bottom: 1px solid v.$color-border;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+  border-right: 1px solid v.$color-border;
+  background-color: v.$color-surface;
+  white-space: nowrap;
+  cursor: default;
+  transition: background-color v.$transition-fast, color v.$transition-fast;
+
+  &.active {
+    background-color: v.$color-panel;
+    color: v.$color-text-primary;
+    box-shadow: inset 0 -2px 0 v.$color-accent;
+  }
+}
+
+.tabDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.codeArea {
+  flex: 1;
+  padding: 16px 0;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  overflow: auto;
+  background-color: v.$color-panel;
+}
+
+.codeLine {
+  display: flex;
+  white-space: pre;
+}
+
+.lineNumber {
+  width: 44px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 16px;
+  color: #4a4a4f;
+  user-select: none;
+}
+
+.lineContent {
+  color: #d4d4d4;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background-color: v.$color-accent;
+  margin-left: 1px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.panelTabs {
+  display: flex;
+  border-top: 1px solid v.$color-border;
+  background-color: v.$color-surface;
+}
+
+.panelTab {
+  padding: 7px 14px;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  border-right: 1px solid v.$color-border;
+
+  &.active {
+    color: v.$color-text-primary;
+    box-shadow: inset 0 2px 0 v.$color-accent;
+  }
+}
+
+.terminalBody {
+  height: 130px;
+  background-color: v.$color-surface;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.75rem;
+  overflow-y: auto;
+  display: none;
+
+  @media (min-width: v.$bp-tablet) {
+    display: block;
+  }
+}
+
+.terminalLine {
+  display: flex;
+  gap: 8px;
+  color: v.$color-text-secondary;
+  margin-bottom: 4px;
+}
+
+.terminalPrompt {
+  color: #4ec9b0;
+  flex-shrink: 0;
+}
+
+.statusBar {
+  height: 26px;
+  background-color: v.$color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 0.6875rem;
+  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    font-size: 0.6rem;
+    padding: 0 6px;
+  }
+}
+
+.statusLeft,
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    gap: 6px;
+  }
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.95;
+
+  &.hideMobile {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,206 @@
+@use "../../styles/variables" as v;
+
+.page {
+  overflow-x: hidden;
+}
+
+.heroImageWrap {
+  max-width: 720px;
+  margin: v.$space-xl auto 0;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background-color: v.$color-border;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+
+  @media (min-width: v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: v.$bp-laptop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: v.$color-surface;
+  padding: v.$space-xl;
+  transition: background-color v.$transition-base;
+
+  &:hover {
+    background-color: v.$color-panel;
+  }
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-panel;
+  border: 1px solid v.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$color-accent;
+  margin-bottom: v.$space-md;
+}
+
+.cardTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.sectionBlock {
+  padding: v.$space-3xl 0;
+  border-top: 1px solid v.$color-border;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: v.$space-lg;
+  margin-top: v.$space-2xl;
+}
+
+.workflowCard {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+
+  .stepNum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(0, 122, 204, 0.15);
+    color: v.$color-accent-hover;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: v.$space-xs;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.featureListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.featureListItem {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-sm;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.safetyBox {
+  background: linear-gradient(180deg, v.$color-surface 0%, v.$color-panel 100%);
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-2xl;
+  margin-top: v.$space-2xl;
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-sm;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: v.$color-text-secondary;
+    line-height: 1.7;
+    margin-bottom: v.$space-md;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-sm;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: v.$space-sm;
+      font-size: 0.9rem;
+      color: v.$color-text-primary;
+    }
+  }
+}
+
+.faqGrid {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+  margin-top: v.$space-2xl;
+}
+
+.faqItem {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,138 @@
+.loginPage {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+}
+
+.card {
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brand {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 4px 0 0 0;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin: 0;
+  }
+}
+
+.logoBadge {
+  background: #007acc;
+  color: #fff;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.errorBanner {
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.4);
+  color: #f85149;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #8b949e;
+  }
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0a0a0a;
+  border: 1px solid #282828;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #8b949e;
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  &:focus-within {
+    border-color: #007acc;
+  }
+}
+
+.submitBtn {
+  background: #238636;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  &:hover { background: #2ea043; }
+  &:disabled { opacity: 0.6; cursor: not-allowed; }
+}
+
+.footerNote {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8b949e;
+
+  a {
+    color: #58a6ff;
+    text-decoration: underline;
+    &:hover { color: #79c0ff; }
+  }
+}

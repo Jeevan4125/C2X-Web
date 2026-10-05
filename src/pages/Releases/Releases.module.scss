@@ -1,0 +1,9 @@
+@use "../../styles/variables" as v;
+
+.section {
+  padding: v.$space-2xl 0 v.$space-4xl;
+
+  :global(.container-app) {
+    max-width: 780px;
+  }
+}

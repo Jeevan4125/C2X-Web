@@ -1,0 +1,39 @@
+@use "../../styles/variables" as v;
+
+.shareButtons {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  gap: v.$space-sm;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  background: transparent;
+  color: v.$color-text-secondary;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    border-color: var(--hover-color, v.$color-accent);
+    color: var(--hover-color, v.$color-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

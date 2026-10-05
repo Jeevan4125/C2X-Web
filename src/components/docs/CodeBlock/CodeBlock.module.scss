@@ -1,0 +1,86 @@
+@use "../../../styles/variables" as v;
+
+.block {
+  margin: v.$space-lg 0;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid v.$color-border;
+  background: v.$color-panel;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.filename {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.8rem;
+  color: v.$color-text-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.language {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: v.$color-text-secondary;
+}
+
+.pre {
+  margin: 0;
+  padding: 0.85rem 0;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.line {
+  display: flex;
+  padding: 0 1rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.lineNumber {
+  flex-shrink: 0;
+  width: 2rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: #4a4a4a;
+  user-select: none;
+}
+
+.lineContent {
+  color: v.$color-text-primary;
+  white-space: pre;
+}
+
+.keyword {
+  color: #569cd6;
+}
+
+.string {
+  color: #ce9178;
+}
+
+.comment {
+  color: #6a9955;
+  font-style: italic;
+}

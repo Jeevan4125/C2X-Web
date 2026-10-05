@@ -1,0 +1,96 @@
+@use "../../../styles/variables" as v;
+
+.wrapper {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+
+  thead {
+    background-color: v.$color-panel;
+  }
+
+  th {
+    text-align: left;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: v.$color-text-secondary;
+    padding: 0.75rem v.$space-md;
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  td {
+    padding: 0.75rem v.$space-md;
+    border-bottom: 1px solid v.$color-border;
+    font-size: 0.8125rem;
+    vertical-align: middle;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr {
+    transition: background-color v.$transition-fast;
+
+    &:hover {
+      background-color: v.$color-panel;
+    }
+  }
+}
+
+.platformCell {
+  font-weight: 500;
+  color: v.$color-text-primary;
+  white-space: nowrap;
+}
+
+.fileCell {
+  color: v.$color-text-secondary;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  white-space: nowrap;
+}
+
+.hashCell {
+  max-width: 260px;
+}
+
+.hashText {
+  display: block;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  color: v.$color-text-secondary;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actionCol {
+  width: 40px;
+  text-align: right;
+}
+
+.copyBtn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$color-border;
+  color: v.$color-text-secondary;
+  background-color: transparent;
+  transition: color v.$transition-fast, border-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-accent;
+    border-color: v.$color-accent;
+  }
+}

@@ -1,0 +1,68 @@
+@use "../../styles/variables" as v;
+
+.workflowSection {
+  padding: v.$space-4xl 0;
+  background: v.$color-background;
+  border-top: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: v.$space-lg;
+  margin-top: v.$space-2xl;
+}
+
+.stepCard {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-accent-dim;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+  margin-bottom: v.$space-sm;
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 122, 204, 0.15);
+  color: v.$color-accent-hover;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+}

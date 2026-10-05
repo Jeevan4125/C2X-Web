@@ -1,0 +1,51 @@
+@use "../../styles/variables" as v;
+
+.quote {
+  position: relative;
+  padding: v.$space-xl v.$space-xl v.$space-lg;
+  margin: v.$space-xl 0;
+  background: v.$color-surface;
+  border-radius: v.$radius-md;
+  border-left: 4px solid v.$color-accent;
+  border: 1px solid v.$color-border;
+  border-left-width: 4px;
+}
+
+.icon {
+  color: v.$color-accent-dim;
+  opacity: 0.5;
+  margin-bottom: v.$space-sm;
+}
+
+.text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: v.$color-text-primary;
+  font-style: italic;
+  margin-bottom: v.$space-md;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$space-sm;
+  font-size: 0.9rem;
+  color: v.$color-text-secondary;
+  padding-top: v.$space-sm;
+  border-top: 1px solid v.$color-border;
+}
+
+.author {
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.source::before {
+  content: "— ";
+  opacity: 0.5;
+}

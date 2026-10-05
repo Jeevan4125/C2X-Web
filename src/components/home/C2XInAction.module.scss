@@ -1,0 +1,228 @@
+@use "../../styles/variables" as v;
+
+.actionSection {
+  padding: v.$space-4xl 0;
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-3xl 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: v.$space-3xl;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+  font-weight: 700;
+  color: v.$color-text-primary;
+  line-height: 1.2;
+  margin-bottom: v.$space-sm;
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: v.$color-text-secondary;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.workflowTabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: v.$space-2xl;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  background: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+  }
+
+  &.active {
+    color: #fff;
+    background-color: v.$color-accent;
+    border-color: v.$color-accent;
+  }
+}
+
+.displayPanel {
+  background: v.$color-background;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-xl;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: v.$bp-tablet) {
+    padding: v.$space-md;
+  }
+}
+
+.panelHeaderInfo {
+  margin-bottom: v.$space-lg;
+
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+/* Command Palette with Editor Background */
+.commandPaletteWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+.editorBgLayer {
+  background: #0d1117;
+  opacity: 0.75;
+  filter: blur(1px);
+  pointer-events: none;
+  max-height: 480px;
+  overflow: hidden;
+}
+
+.commandPaletteOverlay {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 580px;
+  z-index: 10;
+  background: #181c24;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 122, 204, 0.2);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.cpSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  background: #151921;
+}
+
+.cpList {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover, &.selected {
+    background: rgba(0, 122, 204, 0.3);
+    color: #fff;
+  }
+
+  .shortcut {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+/* Breakpoint Debugger Mockup */
+.debuggerBox {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.825rem;
+  padding: 16px;
+  color: #c9d1d9;
+  overflow-x: auto;
+}
+
+.debugRow {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+
+  &.breakpointActive {
+    background: rgba(239, 68, 68, 0.15);
+    border-left: 3px solid #ef4444;
+    padding-left: 8px;
+  }
+}
+
+.gutterDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ef4444;
+  margin-right: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.gutterEmpty {
+  width: 12px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}

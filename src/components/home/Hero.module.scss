@@ -1,0 +1,151 @@
+@use "../../styles/variables" as v;
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px);
+  padding: v.$space-xs 0 v.$space-3xl;
+  background: v.$color-background;
+  overflow: hidden;
+
+  @media (max-width: v.$bp-tablet) {
+    min-height: calc(100vh - 56px);
+    padding: 0 0 v.$space-2xl;
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    min-height: auto;
+    padding: 0 0 v.$space-xl;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$space-md;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: v.$space-lg;
+
+  @media (max-width: v.$bp-tablet) {
+    gap: v.$space-md;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(0, 122, 204, 0.1);
+  border: 1px solid rgba(0, 122, 204, 0.2);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: v.$color-accent-hover;
+
+  svg {
+    color: v.$color-accent-hover;
+  }
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.9rem;
+  }
+}
+
+.heading {
+  font-size: clamp(3rem, 5vw + 1.5rem, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: v.$color-text-primary;
+  max-width: 900px;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: clamp(2.5rem, 4vw + 1rem, 3.8rem);
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: clamp(2rem, 3.5vw + 0.8rem, 2.8rem);
+  }
+}
+
+.gradient {
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    v.$color-accent,
+    v.$color-accent-hover,
+    #4ade80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: v.$bp-mobile) {
+    font-weight: 700;
+  }
+}
+
+.description {
+  font-size: 1.25rem;
+  color: v.$color-text-secondary;
+  max-width: 640px;
+  line-height: 1.7;
+
+  @media (max-width: v.$bp-tablet) {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: v.$space-md;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: v.$bp-mobile) {
+    flex-direction: column;
+    width: 100%;
+    gap: v.$space-sm;
+
+    a,
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}

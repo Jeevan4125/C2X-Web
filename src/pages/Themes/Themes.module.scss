@@ -1,0 +1,131 @@
+@use "../../styles/variables" as v;
+
+.page {
+  overflow-x: hidden;
+}
+
+.livePreview {
+  max-width: 760px;
+  margin: 0 auto;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+}
+
+.previewBar {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+}
+
+.previewLabel {
+  margin-left: 10px;
+  font-size: 0.75rem;
+}
+
+.previewBody {
+  padding: 20px 22px 26px;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.9;
+}
+
+.previewLine {
+  white-space: pre-wrap;
+}
+
+.groupTabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: v.$space-xl;
+}
+
+.groupBtn {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  transition: color v.$transition-fast, border-color v.$transition-fast, background-color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: #3a3a3a;
+  }
+
+  &.active {
+    color: #fff;
+    background-color: v.$color-accent;
+    border-color: v.$color-accent;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-lg;
+
+  @media (min-width: v.$bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: v.$bp-laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sectionBlock {
+  padding: v.$space-3xl 0;
+  border-top: 1px solid v.$color-border;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$space-xl;
+  margin-top: v.$space-2xl;
+}
+
+.infoCard {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.configCodeBlock {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  padding: v.$space-xl;
+  margin-top: v.$space-xl;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: v.$color-text-primary;
+  overflow-x: auto;
+}

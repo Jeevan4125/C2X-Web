@@ -1,0 +1,279 @@
+@use "../../styles/variables" as v;
+
+.megaMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  min-width: 720px;
+  max-width: 860px;
+  background: linear-gradient(180deg, #161b22 0%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  padding: v.$space-xl;
+  width: auto;
+  z-index: 110;
+
+  @media (max-width: v.$bp-laptop) {
+    min-width: 560px;
+    max-width: 660px;
+    padding: v.$space-lg;
+  }
+
+  @media (max-width: v.$bp-tablet) {
+    display: none;
+  }
+}
+
+.alignCenter {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) translateY(4px);
+
+  @media (max-width: v.$bp-laptop) {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+.alignRight {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+
+  @media (max-width: v.$bp-laptop) {
+    left: auto;
+    right: 0;
+    transform: translateY(4px);
+  }
+}
+
+.megaMenuInner {
+  width: 100%;
+}
+
+.megaMenuContent {
+  display: flex;
+  gap: v.$space-xl;
+  align-items: stretch;
+
+  @media (max-width: v.$bp-laptop) {
+    flex-direction: column;
+    gap: v.$space-lg;
+  }
+}
+
+.megaMenuColumns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: v.$space-xl;
+  flex: 1;
+  min-width: 0;
+
+  @media (max-width: v.$bp-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$space-md;
+  }
+}
+
+.megaMenuColumn {
+  min-width: 0;
+
+  h4 {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: v.$space-sm;
+    padding-bottom: v.$space-xs;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+}
+
+.columnItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.columnItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.6rem;
+  border-radius: v.$radius-sm;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  border-left: 2px solid transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: v.$radius-sm;
+    background: rgba(255, 255, 255, 0.04);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+    border-left-color: v.$color-accent;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .itemLabel {
+      color: v.$color-text-primary;
+    }
+
+    .itemDescription {
+      opacity: 0.8;
+    }
+  }
+}
+
+.itemLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.25s ease;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemDescription {
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+  opacity: 0.6;
+  margin-top: 0.1rem;
+  transition: opacity 0.25s ease;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.megaMenuFeatured {
+  flex: 0 0 220px;
+  max-width: 220px;
+  padding-left: v.$space-xl;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: stretch;
+
+  @media (max-width: v.$bp-laptop) {
+    flex: 0 0 auto;
+    max-width: none;
+    padding-left: 0;
+    border-left: none;
+    padding-top: v.$space-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+.featuredCard {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 122, 204, 0.06),
+    rgba(0, 122, 204, 0.015)
+  );
+  border-radius: v.$radius-md;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid rgba(0, 122, 204, 0.08);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 122, 204, 0.02);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: -30%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(
+      circle at top right,
+      rgba(0, 122, 204, 0.04),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .featuredIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: v.$radius-sm;
+    background: rgba(0, 122, 204, 0.12);
+    color: v.$color-accent-hover;
+    margin-bottom: v.$space-xs;
+    position: relative;
+    z-index: 1;
+  }
+
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-xs;
+    position: relative;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: v.$color-text-secondary;
+    line-height: 1.5;
+    margin-bottom: v.$space-sm;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    opacity: 0.8;
+  }
+}
+
+.featuredLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: v.$color-accent-hover;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    gap: 0.7rem;
+    color: v.$color-accent;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}

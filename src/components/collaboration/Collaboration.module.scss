@@ -1,0 +1,210 @@
+@use "../../styles/variables" as v;
+
+// ===== CollaborativeEditor =====
+
+.editorWindow {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+}
+
+.editorTitleBar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  background-color: v.$color-panel;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.editorTitleLabel {
+  margin-left: 10px;
+  font-size: 0.75rem;
+  color: v.$color-text-secondary;
+}
+
+.editorSurface {
+  position: relative;
+  padding: 16px 0;
+  font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 26px;
+  background-color: v.$color-panel;
+  min-height: 320px;
+}
+
+.codeLine {
+  display: flex;
+  white-space: pre;
+  padding: 0 16px;
+}
+
+.lineNumber {
+  width: 34px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 16px;
+  color: #4a4a4f;
+  user-select: none;
+}
+
+.remoteCursor {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: var(--cursor-color);
+  pointer-events: none;
+}
+
+.cursorFlag {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  white-space: nowrap;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--cursor-color);
+  padding: 1px 6px;
+  border-radius: 4px 4px 4px 0;
+}
+
+// ===== PresencePanel =====
+
+.presencePanel,
+.chatPreview {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.presenceHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4ec9b0;
+  box-shadow: 0 0 0 3px rgba(78, 201, 176, 0.15);
+}
+
+.presenceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.presenceItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.presenceAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.presenceMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.presenceName {
+  font-size: 0.8125rem;
+  color: v.$color-text-primary;
+  font-weight: 500;
+}
+
+.presenceLocation {
+  font-size: 0.6875rem;
+  color: v.$color-text-secondary;
+  font-family: "JetBrains Mono", monospace;
+}
+
+// ===== ChatPreview =====
+
+.chatMessages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.chatMsgRow {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.chatMsgMeta {
+  font-size: 0.6875rem;
+  color: v.$color-text-primary;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+
+  span {
+    color: v.$color-text-secondary;
+    font-weight: 400;
+    margin-left: 0.3rem;
+  }
+}
+
+.chatMsgText {
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+  margin: 0;
+}
+
+.chatInputBar {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8125rem;
+  color: v.$color-text-secondary;
+  background-color: v.$color-panel;
+
+  svg {
+    color: v.$color-accent;
+    flex-shrink: 0;
+  }
+}

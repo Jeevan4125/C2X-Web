@@ -1,0 +1,64 @@
+@use "../../../styles/variables" as v;
+
+.list {
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  overflow: hidden;
+}
+
+.item {
+  border-bottom: 1px solid v.$color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: v.$color-surface;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: v.$color-text-primary;
+  cursor: pointer;
+  transition: background v.$transition-fast;
+
+  &:hover {
+    background: v.$color-panel;
+  }
+}
+
+.open .question {
+  background: v.$color-panel;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: v.$color-text-secondary;
+  transition: transform v.$transition-base;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  color: v.$color-accent-hover;
+}
+
+.answerWrap {
+  overflow: hidden;
+  background: v.$color-surface;
+}
+
+.answer {
+  padding: 0 1.25rem 1.1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: v.$color-text-secondary;
+}

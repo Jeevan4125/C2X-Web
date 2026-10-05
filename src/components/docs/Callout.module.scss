@@ -1,0 +1,67 @@
+@use "../../styles/variables" as v;
+
+.callout {
+  display: flex;
+  gap: 0.75rem;
+  margin: v.$space-lg 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: v.$radius-md;
+  border: 1px solid;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: v.$color-text-primary;
+}
+
+.content {
+  color: v.$color-text-secondary;
+
+  :global(code) {
+    font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace;
+    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+  }
+}
+
+.info {
+  border-color: rgba(0, 122, 204, 0.35);
+  background: rgba(0, 122, 204, 0.08);
+
+  .icon {
+    color: v.$color-accent-hover;
+  }
+}
+
+.warning {
+  border-color: rgba(230, 160, 60, 0.35);
+  background: rgba(230, 160, 60, 0.08);
+
+  .icon {
+    color: #e6a03c;
+  }
+}
+
+.note {
+  border-color: rgba(78, 201, 176, 0.35);
+  background: rgba(78, 201, 176, 0.08);
+
+  .icon {
+    color: #4ec9b0;
+  }
+}
