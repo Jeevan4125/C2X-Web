@@ -9,3 +9,6 @@ npm-debug.log*
 
 .vercel
 public/downloads/C2X-IDE-Setup-1.0.0.exe
+public/downloads/*.exe
+public/downloads/*.exe
+public/downloads/*.exe
